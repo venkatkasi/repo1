@@ -48,7 +48,7 @@ jobs:
          mkdir target
          mv . target
          rm -rf target/.git
-         git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/mainrepo target
+         git clone https://.:${{ secrets.PAT }}@github.com/mainrepo target
          cd target
          git add .
          git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
