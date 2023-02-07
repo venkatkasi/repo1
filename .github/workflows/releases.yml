@@ -45,6 +45,14 @@ jobs:
          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
          echo $LATEST_TAG
          git checkout $LATEST_TAG
+         mkdir target
+         mv . target
+         rm -rf target/.git
+         git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/mainrepo target
+         cd target
+         git add .
+         git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
+         git push target master
 
           
        
