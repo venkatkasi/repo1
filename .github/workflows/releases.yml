@@ -11,19 +11,19 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
      - uses: actions/checkout@v3
-        with:
+       with:
           repository: venkatkasi/repo2
           path: repo2
           
      - uses: actions/checkout@v3
-        with:
-          repository: venkatkasi/repo3
-          path: repo3
+       with:
+         repository: venkatkasi/repo3
+         path: repo3
         
      - uses: actions/checkout@v3
-         with:
-           repository: venkatkasi/repo4
-           path: repo4
+       with:
+         repository: venkatkasi/repo4
+         path: repo4
      
           
        
