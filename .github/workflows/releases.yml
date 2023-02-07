@@ -3,6 +3,9 @@ name: Act on release created
 on:
   release:
     types: [created]
+    
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:
@@ -44,8 +47,7 @@ jobs:
          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
          echo $LATEST_TAG
          gh release download $LATEST_TAG -D test
-         env:
-           GH_TOKEN: ${{ secrets.PAT }}
+
 
 
 
