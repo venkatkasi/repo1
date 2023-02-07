@@ -48,7 +48,7 @@ jobs:
          echo $LATEST_TAG
          gh release download $LATEST_TAG --archive=zip -D test
          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/venkatkasi/mainrepo target
-         copy test/*.zip target
+         cp test/*.zip target
          cd target
          git add .
          git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
