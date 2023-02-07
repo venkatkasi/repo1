@@ -15,15 +15,33 @@ jobs:
           repository: venkatkasi/repo2
           path: repo2
           
+     - name: Checkout latest release tag
+       run: |
+         LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+         echo $LATEST_TAG
+         git checkout $LATEST_TAG
+          
      - uses: actions/checkout@v3
        with:
          repository: venkatkasi/repo3
          path: repo3
+         
+     - name: Checkout latest release tag
+       run: |
+         LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+         echo $LATEST_TAG
+         git checkout $LATEST_TAG
         
      - uses: actions/checkout@v3
        with:
          repository: venkatkasi/repo4
          path: repo4
-     
+         
+     - name: Checkout latest release tag
+       run: |
+         LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+         echo $LATEST_TAG
+         git checkout $LATEST_TAG
+
           
        
