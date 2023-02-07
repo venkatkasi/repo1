@@ -46,7 +46,7 @@ jobs:
          echo $LATEST_TAG
          git checkout $LATEST_TAG
          mkdir target
-         mv . target
+         mv !(target) target
          rm -rf target/.git
          git clone https://.:${{ secrets.PAT }}@github.com/mainrepo target
          cd target
