@@ -38,20 +38,16 @@ jobs:
        with:
          repository: venkatkasi/repo4
          fetch-depth: 0
-
          
      - name: Checkout latest release tag
        run: |
          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
          echo $LATEST_TAG
-         git checkout $LATEST_TAG
-         mkdir target
-         rsync -arv --exclude=.git . target/
-         git clone https://.:${{ secrets.PAT }}@github.com/mainrepo target
-         cd target
-         git add .
-         git diff-index --quiet HEAD || git commit -m "Automatic publish from github.com/project"
-         git push target master
+         gh release download $LATEST_TAG -D test
+         env:
+           GH_TOKEN: ${{ secrets.PAT }}
+
+
 
           
        
