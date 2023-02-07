@@ -47,7 +47,7 @@ jobs:
          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
          echo $LATEST_TAG
          gh release download $LATEST_TAG --archive=zip -D test
-         git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/mainrepo target
+         git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/venkatkasi/mainrepo target
          copy test/*.zip target
          cd target
          git add .
