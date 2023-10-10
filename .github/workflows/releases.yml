@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    name: Clone all latest release from all repo
+    name: Clone all latest release from all repo1
     environment: build_environment
     runs-on: ubuntu-latest
     steps: 
