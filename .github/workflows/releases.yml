@@ -10,7 +10,7 @@ env:
 jobs:
   build:
     name: Clone all latest release from all repo
-    environment: build_environment
+    environment: build_environment1
     runs-on: ubuntu-latest
     steps: 
      - uses: actions/checkout@v3
